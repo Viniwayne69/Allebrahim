@@ -1,0 +1,455 @@
+@import "tailwindcss";
+
+:root {
+  --cream: #f6ebdd;
+  --cream-soft: #fff8ec;
+  --brown: #2b1810;
+  --red: #c8281e;
+  --red-hover: #a91f16;
+  --orange: #f28c28;
+  --yellow: #fbd38d;
+  --orange-deep: #b4540a;
+  --muted: #5d463a;
+  --line: rgba(43, 24, 16, 0.16);
+  --shadow: 0 18px 60px rgba(43, 24, 16, 0.14);
+  --header-height: 76px;
+  --background: var(--cream);
+  --foreground: var(--brown);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+  --font-logo: var(--font-logo);
+  --font-script: var(--font-script);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 82px;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--brown);
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
+  /* entradas laterais não podem criar barra de rolagem horizontal */
+  overflow-x: clip;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+/* Resets em @layer base: CSS fora de camada vence as classes do Tailwind
+   e anulava cor e fonte de links e botões (ex.: text-white, font-bold). */
+@layer base {
+  img {
+    max-width: 100%;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+::selection {
+  background: rgba(242, 140, 40, 0.28);
+}
+
+.section-shell {
+  margin-inline: auto;
+  width: min(100% - 32px, 1200px);
+}
+
+.display-title {
+  font-family: var(--font-display), Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+.brand-logo {
+  font-family: var(--font-logo), Georgia, serif;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.focus-ring:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+}
+
+.dark-band {
+  background: var(--brown);
+  color: var(--cream-soft);
+}
+
+.dark-band + .dark-band {
+  border-top: 1px solid rgba(255, 248, 236, 0.1);
+}
+
+.red-band {
+  background: var(--red);
+  color: #fff8ec;
+}
+
+.section-offset {
+  scroll-margin-top: 86px;
+}
+
+.section-pad {
+  padding-block: clamp(56px, 7vw, 96px);
+}
+
+.section-pad-t {
+  padding-top: clamp(56px, 7vw, 96px);
+}
+
+.section-pad-b {
+  padding-bottom: clamp(56px, 7vw, 96px);
+}
+
+.field {
+  min-height: 46px;
+  width: 100%;
+  min-width: 0;
+  border-radius: 10px;
+  border: 1px solid rgba(43, 24, 16, 0.2);
+  background-color: #fffaf4;
+  padding: 10px 12px;
+  color: var(--brown);
+  font-size: 16px;
+  font-weight: 600;
+  outline: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+}
+
+.field::placeholder {
+  color: rgba(43, 24, 16, 0.45);
+  font-weight: 500;
+}
+
+.field:hover {
+  border-color: rgba(43, 24, 16, 0.4);
+}
+
+.field:focus {
+  border-color: var(--orange);
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(242, 140, 40, 0.2);
+}
+
+.field[aria-invalid="true"] {
+  border-color: var(--red);
+  background-color: #fff3f0;
+}
+
+.field[aria-invalid="true"]:focus {
+  box-shadow: 0 0 0 3px rgba(200, 40, 30, 0.18);
+}
+
+select.field {
+  appearance: none;
+  cursor: pointer;
+  padding-right: 36px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232b1810' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+}
+
+@media (min-width: 768px) {
+  .field {
+    font-size: 15px;
+  }
+}
+
+/* Animações de entrada (rolagem) */
+:root {
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+[data-reveal] {
+  transition: opacity 800ms var(--ease-out), transform 800ms var(--ease-out);
+}
+
+[data-reveal][data-hidden="true"] {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+[data-reveal="left"][data-hidden="true"] {
+  transform: translateX(-36px);
+}
+
+[data-reveal="right"][data-hidden="true"] {
+  transform: translateX(36px);
+}
+
+[data-reveal="zoom"][data-hidden="true"] {
+  transform: translateY(16px) scale(0.94);
+}
+
+[data-reveal="fade"][data-hidden="true"] {
+  transform: none;
+}
+
+[data-reveal="line"] {
+  transform-origin: left center;
+  transition-duration: 1300ms;
+}
+
+[data-reveal="line"][data-hidden="true"] {
+  transform: scaleX(0);
+  opacity: 1;
+}
+
+@media (max-width: 767px) {
+  [data-reveal="left"][data-hidden="true"],
+  [data-reveal="right"][data-hidden="true"] {
+    transform: translateY(24px);
+  }
+}
+
+/* Animações de carregamento da página (só CSS, sem JavaScript) */
+@keyframes enter-up {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+}
+
+@keyframes enter-down {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes enter-photo {
+  from {
+    opacity: 0;
+    transform: translateX(56px) scale(0.97);
+  }
+}
+
+@keyframes enter-blob {
+  from {
+    opacity: 0;
+    transform: scale(0.35);
+  }
+}
+
+@keyframes enter-word {
+  from {
+    opacity: 0;
+    transform: translateY(0.55em);
+  }
+}
+
+.enter {
+  animation: enter-up 900ms var(--ease-out) both;
+  animation-delay: var(--d, 0ms);
+}
+
+.enter-photo {
+  animation: enter-photo 1100ms var(--ease-out) both;
+  animation-delay: var(--d, 0ms);
+}
+
+.enter-blob {
+  animation: enter-blob 1200ms cubic-bezier(0.2, 0.9, 0.25, 1.05) both;
+  animation-delay: var(--d, 0ms);
+}
+
+.enter-word {
+  display: inline-block;
+  animation: enter-word 800ms var(--ease-out) both;
+  animation-delay: var(--d, 0ms);
+}
+
+/* fill-mode "backwards" no cabeçalho: não deixa transform preso (o menu mobile é "fixed" dentro dele) */
+.enter-header {
+  animation: enter-down 800ms var(--ease-out) backwards;
+}
+
+.scroll-progress {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 80;
+  height: 3px;
+  background: var(--orange);
+  transform: scaleX(0);
+  transform-origin: left center;
+  pointer-events: none;
+}
+
+/* Botão do WhatsApp: pulso suave para chamar atenção sem atrapalhar */
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.45);
+  }
+  70%,
+  100% {
+    box-shadow: 0 0 0 16px rgba(37, 211, 102, 0);
+  }
+}
+
+.pulse-ring {
+  animation: pulse-ring 2.6s ease-out 2.5s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  [data-reveal],
+  .enter,
+  .enter-photo,
+  .enter-blob,
+  .enter-word,
+  .enter-header,
+  .pulse-ring {
+    animation: none;
+    transition: none;
+  }
+
+  .scroll-progress {
+    display: none;
+  }
+}
+
+/* Escala tipográfica única */
+.h-hero {
+  font-size: clamp(46px, 11vw, 56px);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.h-section {
+  font-size: clamp(34px, 8.5vw, 40px);
+  line-height: 1.04;
+}
+
+.h-cta {
+  font-size: clamp(30px, 7vw, 36px);
+  line-height: 1.04;
+}
+
+@media (min-width: 768px) {
+  .h-hero {
+    font-size: clamp(52px, 4.8vw, 68px);
+  }
+
+  .h-section {
+    font-size: clamp(40px, 3.9vw, 56px);
+  }
+
+  .h-cta {
+    font-size: clamp(36px, 3.4vw, 48px);
+  }
+}
+
+/* Hero: no celular a foto fica ao lado dos botões; no desktop, em duas colunas */
+.hero-grid {
+  display: grid;
+  align-items: end;
+  column-gap: 8px;
+  row-gap: 18px;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  grid-template-areas:
+    "title title"
+    "sub sub"
+    "ctas photo"
+    "stats stats";
+}
+
+.hero-left {
+  display: contents;
+}
+
+.hero-title {
+  grid-area: title;
+}
+
+.hero-sub {
+  grid-area: sub;
+}
+
+.hero-ctas {
+  grid-area: ctas;
+  align-self: center;
+}
+
+.hero-stats {
+  grid-area: stats;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-photo {
+  grid-area: photo;
+  margin-bottom: -28px;
+}
+
+@media (min-width: 768px) {
+  .hero-grid {
+    column-gap: 32px;
+    row-gap: 0;
+    grid-template-columns: 0.95fr 1.05fr;
+    grid-template-areas: "left photo";
+  }
+
+  .hero-left {
+    display: block;
+    grid-area: left;
+    padding-bottom: 64px;
+  }
+
+  .hero-title,
+  .hero-sub,
+  .hero-ctas,
+  .hero-stats {
+    grid-area: auto;
+  }
+
+  .hero-photo {
+    margin-bottom: 0;
+  }
+}
+
+/* Linhas pontilhadas das três soluções: aparecem "desenhadas" de cima para baixo */
+.tree-lines {
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 1.1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tree-lines[data-drawn="false"] {
+  clip-path: inset(0 0 100% 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tree-lines {
+    transition: none;
+  }
+}
+
+
