@@ -71,7 +71,7 @@ export const consultingSteps = [
 export const implementationCards = [
   ["CRM", "Organização e visibilidade do funil de vendas."],
   ["Site e páginas de venda", "Estrutura para gerar e converter mais oportunidades."],
-  ["Cadência e follow-up", "Rotina comercial consistente."],
+  ["Cadência e follow-up", "Rotina comercial completa."],
   ["Scripts e processo comercial", "Argumentação, objeções e etapas do processo."],
 ];
 
