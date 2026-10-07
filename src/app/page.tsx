@@ -1,5 +1,4 @@
 import { About } from "@/components/sections/About";
-import { Authority } from "@/components/sections/Authority";
 import { Consulting } from "@/components/sections/Consulting";
 import { Faq } from "@/components/sections/Faq";
 import { FinalCta } from "@/components/sections/FinalCta";
@@ -34,7 +33,6 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <main id="conteudo">
         <Hero />
-        <Authority />
         <Solutions />
         <Training />
         <Consulting />
