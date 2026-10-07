@@ -23,7 +23,7 @@ export const stats = [
 
 export const nextClass = {
   name: "Experiência 360", // EXEMPLO: substituir pelo dado real
-  date: "18 de março de 2025", // EXEMPLO: substituir pelo dado real
+  date: "25 de outubro de 2026",
   city: "Recife - PE",
   availability: "Vagas limitadas", // EXEMPLO: substituir pelo dado real
   link: "#contato", // EXEMPLO: substituir pelo dado real
