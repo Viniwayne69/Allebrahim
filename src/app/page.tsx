@@ -6,7 +6,6 @@ import { FinalCta } from "@/components/sections/FinalCta";
 import { Hero } from "@/components/sections/Hero";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { Implementation } from "@/components/sections/Implementation";
-import { Problem } from "@/components/sections/Problem";
 import { Results } from "@/components/sections/Results";
 import { Solutions } from "@/components/sections/Solutions";
 import { Training } from "@/components/sections/Training";
@@ -37,7 +36,6 @@ export default function Home() {
         <Hero />
         <Authority />
         <Solutions />
-        <Problem />
         <Training />
         <Consulting />
         <Implementation />

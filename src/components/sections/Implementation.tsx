@@ -9,9 +9,9 @@ const icons = [DatabaseIcon, MonitorIcon, MailIcon, DocumentIcon];
 
 export function Implementation() {
   return (
-    <section id="implementacao" className="section-offset red-band section-pad">
+    <section id="implementacao" className="section-offset dark-band section-pad">
       <div className="section-shell text-center">
-        <SectionLabel tone="onRed">SOLUÇÃO 3 · IMPLEMENTAÇÃO</SectionLabel>
+        <SectionLabel tone="onDark">SOLUÇÃO 3 · IMPLEMENTAÇÃO</SectionLabel>
         <h2 className="display-title h-section mx-auto mt-2 max-w-4xl">A estratégia só funciona quando está de pé no dia a dia.</h2>
         <div className="mt-10 grid gap-4 md:mt-12 md:grid-cols-4">
           {implementationCards.map(([title, text], index) => {
@@ -30,7 +30,7 @@ export function Implementation() {
             );
           })}
         </div>
-        <InterestButton interest="Implementação" className="mt-8 w-full border border-white bg-transparent text-white hover:bg-white hover:text-[var(--red)] md:w-auto md:bg-white md:text-[var(--brown)]">
+        <InterestButton interest="Implementação" className="mt-8 w-full bg-[var(--red)] text-white hover:bg-[var(--red-hover)] md:w-auto">
           Quero estruturar meu comercial <ArrowIcon />
         </InterestButton>
       </div>

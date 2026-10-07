@@ -11,9 +11,9 @@ const icons = [CapIcon, BuildingIcon, UsersIcon, RocketIcon];
 
 export function Training() {
   return (
-    <section id="treinamento" className="section-offset dark-band section-pad">
+    <section id="treinamento" className="section-offset red-band section-pad">
       <div className="section-shell">
-        <SectionLabel>SOLUÇÃO 1 · TREINAMENTO</SectionLabel>
+        <SectionLabel tone="onRed">SOLUÇÃO 1 · TREINAMENTO</SectionLabel>
         <h2 className="display-title h-section mt-2 max-w-2xl">Um time que sabe vender, vende todo dia.</h2>
         <div className="mt-10 grid grid-cols-2 md:mt-12 gap-3 lg:grid-cols-4 lg:gap-5">
           {trainingCards.map((card, index) => {

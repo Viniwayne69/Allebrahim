@@ -3,7 +3,7 @@ import { authorityLogos } from "@/content/logos";
 
 export function Authority() {
   return (
-    <section className="dark-band py-7 text-white">
+    <section className="dark-band hidden py-7 text-white md:block">
       <div className="section-shell">
         <p className="text-center text-sm font-extrabold text-white/70">Marcas que confiam no nosso trabalho</p>
         <div className="mt-5 flex items-center gap-4 overflow-x-auto pb-1 md:grid md:grid-cols-6 md:overflow-visible">
