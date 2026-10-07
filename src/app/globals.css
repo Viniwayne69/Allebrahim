@@ -187,7 +187,16 @@ select.field {
 }
 
 [data-reveal] {
-  transition: opacity 800ms var(--ease-out), transform 800ms var(--ease-out);
+  transition: opacity 550ms var(--ease-out), transform 550ms var(--ease-out);
+}
+
+/* O atraso escalonado só vale no desktop: no celular os blocos ficam um embaixo do outro
+   e cada um deve aparecer assim que entra na tela. */
+@media (min-width: 768px) {
+  [data-reveal] {
+    transition-duration: 800ms;
+    transition-delay: var(--reveal-delay, 0ms);
+  }
 }
 
 [data-reveal][data-hidden="true"] {
@@ -213,7 +222,12 @@ select.field {
 
 [data-reveal="line"] {
   transform-origin: left center;
-  transition-duration: 1300ms;
+}
+
+@media (min-width: 768px) {
+  [data-reveal="line"] {
+    transition-duration: 1300ms;
+  }
 }
 
 [data-reveal="line"][data-hidden="true"] {
@@ -224,7 +238,7 @@ select.field {
 @media (max-width: 767px) {
   [data-reveal="left"][data-hidden="true"],
   [data-reveal="right"][data-hidden="true"] {
-    transform: translateY(24px);
+    transform: translateY(20px);
   }
 }
 

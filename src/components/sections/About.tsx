@@ -10,7 +10,7 @@ export function About() {
     <section id="sobre" className="section-offset bg-[var(--cream)] section-pad-t pb-14">
       <div className="section-shell grid gap-7 md:grid-cols-[0.95fr_1.05fr] md:items-center">
         <Reveal variant="left">
-          <Image src="/images/sobre-alle.webp" alt="Allê Ebrahim falando em evento" width={900} height={700} className="aspect-[9/7] rounded-[18px] object-cover" />
+          <Image src="/images/sobre-alle-v2.webp" alt="Allê Ebrahim falando em evento" width={1080} height={720} className="aspect-[9/7] w-full rounded-[18px] object-cover" />
         </Reveal>
         <Reveal variant="right" delay={120}>
           <h2 className="display-title h-section">{aboutCopy.title}</h2>

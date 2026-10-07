@@ -29,7 +29,7 @@ export function Reveal({ children, className = "", delay = 0, variant = "up" }: 
           observer.disconnect();
         }
       },
-      { threshold: 0.12, rootMargin: "0px 0px -6% 0px" },
+      { threshold: 0.08, rootMargin: "0px 0px -3% 0px" },
     );
     observer.observe(node);
     return () => {
@@ -42,7 +42,7 @@ export function Reveal({ children, className = "", delay = 0, variant = "up" }: 
     <div
       ref={ref}
       data-reveal={variant}
-      style={delay ? { transitionDelay: `${delay}ms` } : undefined}
+      style={delay ? ({ "--reveal-delay": `${delay}ms` } as React.CSSProperties) : undefined}
       className={className}
     >
       {children}
