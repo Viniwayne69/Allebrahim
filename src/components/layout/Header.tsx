@@ -80,7 +80,7 @@ export function Header() {
     </header>
       <div inert={!open} className={`fixed inset-0 z-[70] bg-[var(--brown)] text-white transition lg:hidden ${open ? "translate-x-0" : "translate-x-full"}`}>
         <div className="section-shell flex h-[76px] items-center justify-between">
-          <Logo className="text-2xl" />
+          <Logo tone="light" className="text-2xl" />
           <button className="focus-ring grid h-11 w-11 place-items-center rounded-[10px] text-3xl" aria-label="Fechar menu" onClick={close}>
             ×
           </button>

@@ -24,7 +24,7 @@ export function Results() {
                     <Image src={item.image} alt={`Retrato de ${item.name}`} width={200} height={200} className="h-14 w-14 rounded-full object-cover" />
                     <div>
                       <h3 className="font-black">{item.name}</h3>
-                      <p className="text-xs font-bold text-[#6d5548]">{item.role}</p>
+                      <p className="text-xs font-bold text-[var(--muted)]">{item.role}</p>
                     </div>
                   </div>
                   <p className="mt-4 text-[15px] font-medium leading-6">“{item.quote}”</p>

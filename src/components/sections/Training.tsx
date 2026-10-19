@@ -45,7 +45,7 @@ export function Training() {
                 <li>{nextClass.availability}</li>
               </ul>
             </div>
-            <InterestButton interest="Treinamento" className="bg-[var(--brown)] text-white hover:bg-[#160905]">
+            <InterestButton interest="Treinamento" className="bg-[var(--brown)] text-white hover:bg-[var(--brown-deep)]">
               Garantir minha vaga <ArrowIcon />
             </InterestButton>
           </div>

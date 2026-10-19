@@ -56,7 +56,7 @@ export function Hero() {
               />
             </div>
           </div>
-          <div style={{ "--d": "1300ms" } as React.CSSProperties} className="enter absolute right-0 top-[18%] hidden w-[150px] rotate-[-5deg] text-center font-[family-name:var(--font-script)] text-4xl leading-8 text-[var(--brown)] lg:block">
+          <div style={{ "--d": "1300ms" } as React.CSSProperties} className="enter absolute right-0 top-[18%] hidden w-[150px] rotate-[-5deg] text-center text-2xl font-semibold italic leading-7 text-[var(--brown)] lg:block">
             {heroCopy.note.map((line) => (
               <span key={line} className="block">
                 {line}

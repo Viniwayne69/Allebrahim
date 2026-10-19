@@ -11,7 +11,7 @@ export function Footer() {
     <footer className="dark-band py-8">
       <div className="section-shell grid gap-8 md:grid-cols-[1.4fr_1fr_1fr] md:items-start">
         <div>
-          <Logo className="block text-3xl" />
+          <Logo tone="light" className="block text-2xl" />
           <p className="mt-1 text-sm text-white/75">{brand.signature}</p>
         </div>
         <nav className="grid grid-cols-2 gap-2 text-sm text-white/80" aria-label="Links do rodapé">

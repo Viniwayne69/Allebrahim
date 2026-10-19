@@ -5,17 +5,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        cream: "#F6EBDD",
-        brown: "#2B1810",
-        red: "#C8281E",
-        orange: "#F28C28",
-        yellow: "#FBD38D",
+        cream: "#FFF8EE",
+        brown: "#002D3C",
+        red: "#831417",
+        orange: "#DF9226",
+        yellow: "#F2C27A",
       },
       borderRadius: {
         card: "16px",
       },
       boxShadow: {
-        soft: "0 18px 60px rgba(43, 24, 16, 0.14)",
+        soft: "0 18px 60px rgba(0, 45, 60, 0.14)",
       },
     },
   },

@@ -1,17 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  --cream: #f6ebdd;
-  --cream-soft: #fff8ec;
-  --brown: #2b1810;
-  --red: #c8281e;
-  --red-hover: #a91f16;
-  --orange: #f28c28;
-  --yellow: #fbd38d;
-  --orange-deep: #b4540a;
-  --muted: #5d463a;
-  --line: rgba(43, 24, 16, 0.16);
-  --shadow: 0 18px 60px rgba(43, 24, 16, 0.14);
+  /* Identidade visual da Allê Ebrahim. Os nomes das variáveis vieram do site antigo
+     e foram mantidos para o layout não mudar: cream = fundo claro, brown = azul-petróleo
+     (texto e faixas escuras), red = bordô (botões), orange = mostarda (destaques). */
+  --cream: #fff8ee;
+  --cream-soft: #fffcf6;
+  --brown: #002d3c;
+  --brown-deep: #00212c;
+  --red: #831417;
+  --red-hover: #5f0e11;
+  --orange: #df9226;
+  --brand-orange: #de6226;
+  --yellow: #f2c27a;
+  --orange-deep: #b34a14;
+  --muted: #3f5f6b;
+  --line: rgba(0, 45, 60, 0.16);
+  --shadow: 0 18px 60px rgba(0, 45, 60, 0.14);
   --header-height: 76px;
   --background: var(--cream);
   --foreground: var(--brown);
@@ -22,8 +27,6 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-body);
   --font-display: var(--font-display);
-  --font-logo: var(--font-logo);
-  --font-script: var(--font-script);
 }
 
 * {
@@ -69,7 +72,7 @@ body.menu-open {
 }
 
 ::selection {
-  background: rgba(242, 140, 40, 0.28);
+  background: rgba(223, 146, 38, 0.3);
 }
 
 .section-shell {
@@ -85,20 +88,28 @@ body.menu-open {
   text-wrap: balance;
 }
 
-.brand-logo {
-  font-family: var(--font-logo), Georgia, serif;
-  font-weight: 800;
-  letter-spacing: 0;
-}
-
 .focus-ring:focus-visible {
   outline: 3px solid var(--orange);
   outline-offset: 3px;
 }
 
 .dark-band {
+  position: relative;
+  isolation: isolate;
   background: var(--brown);
   color: var(--cream-soft);
+}
+
+/* Padrão geométrico da marca, bem discreto, sobre as faixas azul-petróleo */
+.dark-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: url("/brand/pattern-branco.svg") repeat;
+  background-size: 140px 140px;
+  opacity: 0.06;
+  pointer-events: none;
 }
 
 .dark-band + .dark-band {
@@ -107,7 +118,7 @@ body.menu-open {
 
 .red-band {
   background: var(--red);
-  color: #fff8ec;
+  color: var(--cream);
 }
 
 .section-offset {
@@ -131,8 +142,8 @@ body.menu-open {
   width: 100%;
   min-width: 0;
   border-radius: 10px;
-  border: 1px solid rgba(43, 24, 16, 0.2);
-  background-color: #fffaf4;
+  border: 1px solid rgba(0, 45, 60, 0.22);
+  background-color: var(--cream-soft);
   padding: 10px 12px;
   color: var(--brown);
   font-size: 16px;
@@ -142,18 +153,18 @@ body.menu-open {
 }
 
 .field::placeholder {
-  color: rgba(43, 24, 16, 0.45);
+  color: rgba(0, 45, 60, 0.5);
   font-weight: 500;
 }
 
 .field:hover {
-  border-color: rgba(43, 24, 16, 0.4);
+  border-color: rgba(0, 45, 60, 0.42);
 }
 
 .field:focus {
   border-color: var(--orange);
   background-color: #fff;
-  box-shadow: 0 0 0 3px rgba(242, 140, 40, 0.2);
+  box-shadow: 0 0 0 3px rgba(223, 146, 38, 0.24);
 }
 
 .field[aria-invalid="true"] {
@@ -162,14 +173,14 @@ body.menu-open {
 }
 
 .field[aria-invalid="true"]:focus {
-  box-shadow: 0 0 0 3px rgba(200, 40, 30, 0.18);
+  box-shadow: 0 0 0 3px rgba(131, 20, 23, 0.2);
 }
 
 select.field {
   appearance: none;
   cursor: pointer;
   padding-right: 36px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232b1810' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23002d3c' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 12px center;
   background-size: 16px;

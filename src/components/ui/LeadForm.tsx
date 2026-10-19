@@ -87,7 +87,7 @@ export function LeadForm({ compact = false }: { compact?: boolean }) {
     return (
       <div className="rounded-[16px] bg-white p-6 text-[var(--brown)]">
         <h3 className="display-title text-3xl">Recebemos seus dados.</h3>
-        <p className="mt-3 text-sm leading-6 text-[#5d463a]">
+        <p className="mt-3 text-sm leading-6 text-[var(--muted)]">
           Obrigada por chegar até aqui. Agora o próximo passo é uma conversa simples, honesta e bem direcionada.
         </p>
         <a href={whatsappHref("contato")} target="_blank" rel="noreferrer" className="focus-ring mt-5 inline-flex rounded-[10px] bg-[var(--brown)] px-5 py-3 text-sm font-black text-white">
@@ -134,7 +134,7 @@ export function LeadForm({ compact = false }: { compact?: boolean }) {
       <Field label="WhatsApp*" error={errors.whatsapp}>
         <input value={fields.whatsapp} onChange={(event) => setFields({ ...fields, whatsapp: maskPhone(event.target.value) })} placeholder="Seu WhatsApp" inputMode="tel" autoComplete="tel" className="field" aria-invalid={Boolean(errors.whatsapp)} />
       </Field>
-      <button disabled={status === "loading"} className="focus-ring group col-span-full inline-flex min-h-12 items-center justify-center gap-2 rounded-[10px] bg-[var(--brown)] px-5 py-3 text-base font-extrabold text-white transition-colors hover:bg-[#160905] active:translate-y-px disabled:opacity-70">
+      <button disabled={status === "loading"} className="focus-ring group col-span-full inline-flex min-h-12 items-center justify-center gap-2 rounded-[10px] bg-[var(--brown)] px-5 py-3 text-base font-extrabold text-white transition-colors hover:bg-[var(--brown-deep)] active:translate-y-px disabled:opacity-70">
         {status === "loading" ? (
           <>
             <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white" aria-hidden />

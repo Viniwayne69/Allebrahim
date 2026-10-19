@@ -11,7 +11,7 @@ export function Button({ children, variant = "solid", className = "", ...props }
   const variants = {
     solid: "bg-[var(--red)] text-white hover:bg-[var(--red-hover)]",
     outline: "border border-[var(--red)] bg-transparent text-[var(--brown)] hover:bg-[var(--red)] hover:text-white",
-    dark: "bg-[var(--brown)] text-white hover:bg-[#160905]",
+    dark: "bg-[var(--brown)] text-white hover:bg-[var(--brown-deep)]",
     light: "bg-white text-[var(--brown)] hover:bg-[var(--cream-soft)]",
   };
 

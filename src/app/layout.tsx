@@ -1,32 +1,21 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Barlow_Condensed, Caveat, Nunito_Sans, Playfair_Display } from "next/font/google";
+import { Fira_Sans, Fira_Sans_Extra_Condensed } from "next/font/google";
 import "./globals.css";
 
-const body = Nunito_Sans({
+// Tipografia da marca: Fira Sans no texto e a versão condensada nos títulos.
+const body = Fira_Sans({
   variable: "--font-body",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
-const display = Barlow_Condensed({
+const display = Fira_Sans_Extra_Condensed({
   variable: "--font-display",
   subsets: ["latin"],
   weight: ["700", "800"],
-  display: "swap",
-});
-
-const logo = Playfair_Display({
-  variable: "--font-logo",
-  subsets: ["latin"],
-  weight: ["700", "800"],
-  display: "swap",
-});
-
-const script = Caveat({
-  variable: "--font-script",
-  subsets: ["latin"],
-  weight: ["700"],
   display: "swap",
 });
 
@@ -38,6 +27,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  icons: { icon: "/brand/catavento-mostarda.svg" },
   openGraph: {
     title: "Allê Ebrahim | Vender com verdade e constância",
     description:
@@ -64,7 +54,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="pt-BR"
-      className={`${body.variable} ${display.variable} ${logo.variable} ${script.variable} h-full antialiased`}
+      className={`${body.variable} ${display.variable} h-full antialiased`}
     >
       <body className="min-h-full">
         {gaId ? (
